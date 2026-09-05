@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finn din kultur – askerkultur.no</title>
+<meta name="description" content="Oversikt over kulturtilbud i Asker – skolekorps, kor, kulturskole, teater, dans, speider og mer. Søk eller filtrer for å finne noe som passer for deg.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
+<style>
+:root{
+  --blaa:#1c3f6e;--blaa2:#1a5fb4;--bakgrunn:#eef4fb;--kort:#fff;
+  --tekst:#22303f;--lys:#f0f3f7;--graa:#5b6b7c;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,sans-serif;background:var(--bakgrunn);color:var(--tekst)}
+a{color:var(--blaa2)}
+.topbar{background:#fff;border-bottom:1px solid #e3eaf2;position:sticky;top:0;z-index:10}
+.topbar-in{max-width:1200px;margin:0 auto;padding:.7rem 1rem;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:700;color:var(--blaa);text-decoration:none;font-size:1.05rem;display:flex;align-items:center;gap:.5rem}
+.logo .em{font-size:1.3rem}
+.hero{max-width:900px;margin:0 auto;padding:3.2rem 1rem 1.6rem;text-align:center}
+.hero h1{font-size:clamp(2rem,5vw,3rem);margin:0 0 .8rem;color:#14355f}
+.hero p{color:#3d5166;font-size:1.05rem;margin:0 auto;max-width:640px;line-height:1.55}
+.soke-rad{max-width:860px;margin:1.6rem auto 0;display:flex;gap:.8rem;padding:0 1rem}
+.soke-boks{flex:1;display:flex;align-items:center;background:#fff;border-radius:999px;box-shadow:0 2px 10px rgba(20,53,95,.08);padding:.2rem .4rem .2rem 1.2rem}
+.soke-boks input{flex:1;border:0;outline:0;font-size:1rem;padding:.75rem 0;background:transparent;color:var(--tekst)}
+.soke-boks .lupe{color:var(--graa);font-size:1rem}
+.filter-knapp{background:var(--blaa);color:#fff;border:0;border-radius:999px;padding:0 1.5rem;font-size:1rem;cursor:pointer;display:flex;align-items:center;gap:.5rem;box-shadow:0 2px 10px rgba(20,53,95,.15)}
+.filter-knapp:hover{background:#254f88}
+.filter-ikon{font-size:.9rem}
+.filterpanel{max-width:860px;margin:.9rem auto 0;padding:0 1rem;display:none;flex-wrap:wrap;gap:.5rem;justify-content:center}
+.filterpanel.aaapen{display:flex}
+.chip{border:1px solid #d5dfec;background:#fff;color:var(--blaa);border-radius:999px;padding:.45rem 1rem;font-size:.88rem;cursor:pointer;font-family:inherit}
+.chip:hover{background:#e8f0fa}
+.chip.aktiv{background:var(--blaa);color:#fff;border-color:var(--blaa)}
+.teller{max-width:1200px;margin:1.4rem auto 0;padding:0 1rem;color:var(--graa);font-size:.92rem}
+.grid{max-width:1200px;margin:1rem auto 3rem;padding:0 1rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.2rem}
+.kort{background:var(--kort);border-radius:16px;overflow:hidden;box-shadow:0 2px 10px rgba(20,53,95,.08);display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
+.kort:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(20,53,95,.14)}
+.kort-bilde{height:110px;display:flex;align-items:center;justify-content:center;font-size:3rem}
+.kort-kropp{padding:1rem 1.1rem 1.1rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
+.kort-navn{font-size:1.05rem;font-weight:700;color:var(--blaa2);margin:0;line-height:1.3}
+.kort-navn a{color:inherit;text-decoration:none}
+.kort-navn a:hover{text-decoration:underline}
+.chip-rad{display:flex;flex-wrap:wrap;gap:.4rem}
+.mini-chip{background:var(--lys);color:var(--graa);border-radius:999px;padding:.2rem .7rem;font-size:.78rem}
+.lenke-rad{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:auto;padding-top:.3rem}
+.lenke{display:inline-flex;align-items:center;gap:.35rem;background:#eef4fb;color:var(--blaa2);text-decoration:none;border-radius:999px;padding:.32rem .8rem;font-size:.8rem;font-weight:600}
+.lenke:hover{background:#dfeaf8}
+.ingen{grid-column:1/-1;text-align:center;color:var(--graa);padding:3rem 1rem;background:#fff;border-radius:14px;box-shadow:0 2px 10px rgba(20,53,95,.06)}
+footer{border-top:1px solid #e3eaf2;background:#fff;padding:1.6rem 1rem;text-align:center;color:var(--graa);font-size:.85rem}
+@media(max-width:520px){.soke-rad{flex-direction:column}.filter-knapp{padding:.7rem 1.5rem;justify-content:center}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="topbar-in">
+  <a class="logo" href="/"><span class="em">🎭</span> askerkultur.no</a>
+</div></div>
+
+<section class="hero">
+  <h1>Finn din kultur</h1>
+  <p>Kulturtilbud i Asker for store og små – korps, kor, kulturskole, teater, dans, speider og mer. Søk eller filtrer for å finne noe som passer for deg eller dine barn/unge.</p>
+</section>
+
+<div class="soke-rad">
+  <div class="soke-boks">
+    <span class="lupe">🔍</span>
+    <input id="sok" type="search" placeholder="Søk etter korps, kor, skole eller aktivitet" autocomplete="off">
+  </div>
+  <button class="filter-knapp" id="filterKnapp">Filter <span class="filter-ikon">☰</span></button>
+</div>
+
+<div class="filterpanel" id="filterpanel"></div>
+
+<div class="teller" id="teller"></div>
+
+<main class="grid" id="grid"></main>
+
+<footer>
+  askerkultur.no – en oversikt over kulturtilbud i Asker kommune.<br>
+  Mangler din klubb, eller er noe feil? Send en e-post, så oppdaterer vi listen.
+</footer>
+
+<script>
+const KATEGORIER = {
+  "Skolekorps":        {ikon:"🎺", grad:"linear-gradient(135deg,#2f6fb2,#5ea0e0)"},
+  "Kor & musikk":      {ikon:"🎶", grad:"linear-gradient(135deg,#6a4fb2,#a58ae0)"},
+  "Kulturskole":       {ikon:"🎨", grad:"linear-gradient(135deg,#d07a2f,#f0b26a)"},
+  "Scenekunst & dans": {ikon:"🎭", grad:"linear-gradient(135deg,#c04a5a,#e88aa0)"},
+  "Speider":           {ikon:"🧭", grad:"linear-gradient(135deg,#2f8a4e,#7cc492)"},
+  "Frivillig & annet": {ikon:"🤝", grad:"linear-gradient(135deg,#2f7a8a,#7cc0cf)"},
+  "Hobby & teknikk":   {ikon:"✈️", grad:"linear-gradient(135deg,#5a6b7a,#9fb0c0)"}
+};
+
+const KLUBBER = [
+ {n:"Arnestad Skolekorps", k:"Skolekorps", w:"https://www.arnestadskolekorps.no/"},
+ {n:"Asker 1 og 1. Skougum Speidergruppe", k:"Speider", w:"https://asker.speiding.no/", e:"nina.daehli@gmail.com"},
+ {n:"Asker Drill", k:"Scenekunst & dans", w:"https://www.askerdrill.no/", e:"styret@askerdrill.no"},
+ {n:"Asker KFUK-KFUM Kulturskole", k:"Kulturskole", w:"https://kulturforalle.no/", e:"kulturskole@kfuk-kfum.no"},
+ {n:"Asker KFUK-KFUM Speidere", k:"Speider", w:"http://askerspeiderne.no/", e:"medlem@askerspeiderne.no"},
+ {n:"Asker Kulturskole", k:"Kulturskole", w:"https://www.asker.kommune.no/kultur-idrett-og-fritid/kultur/asker-kulturskole/", e:"kulturskolen@asker.kommune.no"},
+ {n:"Asker Kulturskole – Dans", k:"Kulturskole", w:"https://www.asker.kommune.no/kultur-idrett-og-fritid/kultur/asker-kulturskole/dans/", e:"kulturskolen@asker.kommune.no"},
+ {n:"Asker Kulturskole – For de yngste", k:"Kulturskole", w:"https://www.asker.kommune.no/kultur-idrett-og-fritid/kultur/asker-kulturskole/for-barn-fra-2-7-ar/", e:"kulturskolen@asker.kommune.no"},
+ {n:"Asker Kulturskole – Korps", k:"Kulturskole", w:"https://www.asker.kommune.no/kultur-idrett-og-fritid/kultur/asker-kulturskole/korps/", e:"kulturskolen@asker.kommune.no"},
+ {n:"Asker Kulturskole – Musikk", k:"Kulturskole", w:"https://www.asker.kommune.no/kultur-idrett-og-fritid/kultur/asker-kulturskole/musikk/", e:"kulturskolen@asker.kommune.no"},
+ {n:"Asker Kulturskole – Teater", k:"Kulturskole", w:"https://www.asker.kommune.no/kultur-idrett-og-fritid/kultur/asker-kulturskole/teater/", e:"kulturskolen@asker.kommune.no"},
+ {n:"Asker Kulturskole – Visuell kunst", k:"Kulturskole", w:"https://www.asker.kommune.no/kultur-idrett-og-fritid/kultur/asker-kulturskole/visuell-kunst/", e:"kulturskolen@asker.kommune.no"},
+ {n:"Asker Musikkorps", k:"Kor & musikk", w:"https://www.amk.no/", e:"frode.wold@posten.no"},
+ {n:"Asker Røde Kors", k:"Frivillig & annet", w:"https://www.rodekors.no/lokalforeninger/akershus/asker/", e:"asker@rodekors.org"},
+ {n:"Asker Modellklubb", k:"Hobby & teknikk", w:"http://askermodellklubb.no", e:"post@askermodellklubb.no", f:"https://www.facebook.com/groups/Askermodellklubb/"},
+ {n:"Blakstad KFUK-KFUM Speidere", k:"Speider", w:"http://kmspeider.no", e:"post@kmspeider.no"},
+ {n:"Bondi & Vettre Skolekorps", k:"Skolekorps", w:"http://www.bondiogvettreskolekorps.no", e:"post@bondiogvettreskolekorps.no"},
+ {n:"Borgen Skolekorps", k:"Skolekorps", w:"http://www.borgenskolekorps.no", e:"leder@borgenskolekorps.no"},
+ {n:"Crossing Borders", k:"Frivillig & annet", w:"https://crossingborders.no/", e:"hei@crossingborders.no"},
+ {n:"Dansesonen – Dans", k:"Scenekunst & dans", w:"https://dansesonen.no/", e:"post@dansesonen.no"},
+ {n:"Heggedal og Blakstad Skolekorps", k:"Skolekorps", w:"https://hbs.korps.no/", e:"hbs.korps@outlook.com"},
+ {n:"Holmen KFUK-KFUM-speidere", k:"Speider", w:"https://holmen.kmspeider.no/", e:"info@holmenspeider.no"},
+ {n:"Holmen Skolekorps", k:"Skolekorps", w:"https://holmenskolekorps.no/", e:"post@holmenskolekorps.com"},
+ {n:"Hyggen Speidergruppe", k:"Speider", w:"https://hyggen.speiding.no/", e:"gunn-oliv.stenberg-halmer@speiding.no"},
+ {n:"Musica Sinfonietta – Asker barne- og ungdomsorkester", k:"Kor & musikk", w:"https://www.musicasinfonietta.no/", e:"styret@musicasinfonietta.no"},
+ {n:"Nesøya Skolekorps", k:"Skolekorps", w:"http://www.nesoyakorps.com"},
+ {n:"Nørsnes Sangkor", k:"Kor & musikk", f:"https://www.facebook.com/narsnessangkor"},
+ {n:"Røyken Speidergruppe", k:"Speider", f:"https://www.facebook.com/roykenspeiderne/"},
+ {n:"Røyken Teatergruppe", k:"Scenekunst & dans", w:"https://rbuteater.no/", e:"royken.teatergruppe@gmail.com"},
+ {n:"Røyken og Hurum Modellflyklubb", k:"Hobby & teknikk", w:"http://www.rhmfk.org", e:"rhmfk2001@gmail.com", f:"https://www.facebook.com/groups/127743197302166/"},
+ {n:"Slemmestad KFUK-KFUM-Speiderne", k:"Speider", w:"http://kmspeider.no/", e:"post@kmspeider.no"},
+ {n:"Slemmestad Skolekorps", k:"Skolekorps", w:"https://www.slemmestadskolekorps.net", e:"styret@slemmestadskolekorps.net"},
+ {n:"Sætre Barnekor", k:"Kor & musikk", f:"https://www.facebook.com/saetrebarnekor/"},
+ {n:"Sætre Speidergruppe", k:"Speider", w:"https://saetre.speiding.no/", e:"saetre@speiding.no"},
+ {n:"Sætre og Folkestad Skolekorps", k:"Skolekorps", w:"http://saetreogfolkestad.skolemusikkorps.no/", e:"felsens123@gmail.com", f:"https://www.facebook.com/sfkorps/"},
+ {n:"Tofte Skolekorps", k:"Skolekorps", w:"https://tofte.musikkorps.no/", e:"toftemusikkorps@gmail.com"},
+ {n:"UKM Asker", k:"Frivillig & annet", w:"https://ukm.no/asker/", e:"magnus.rokenes@trondheim.kommune.no"},
+ {n:"Vardøsen barne- og ungdomskor", k:"Kor & musikk", w:"https://kirken.no/nb-NO/fellesrad/askerfellesrad/menigheter/vardasenkirke/virksomhetsomrader/kulturkirke/vardasen-barnekor/", e:"vardasen.menighet.asker@kirken.no"}
+];
+
+const grid = document.getElementById("grid");
+const teller = document.getElementById("teller");
+const sokInput = document.getElementById("sok");
+const filterpanel = document.getElementById("filterpanel");
+const filterKnapp = document.getElementById("filterKnapp");
+let aktivKategori = "";
+
+// Bygg filterpanel
+const alleKnapp = document.createElement("button");
+alleKnapp.className = "chip aktiv";
+alleKnapp.textContent = "Alle";
+alleKnapp.onclick = () => velgKategori("");
+filterpanel.appendChild(alleKnapp);
+Object.keys(KATEGORIER).forEach(k => {
+  const b = document.createElement("button");
+  b.className = "chip";
+  b.textContent = KATEGORIER[k].ikon + " " + k;
+  b.onclick = () => velgKategori(k);
+  filterpanel.appendChild(b);
+});
+filterKnapp.onclick = () => filterpanel.classList.toggle("aaapen");
+
+function velgKategori(k) {
+  aktivKategori = k;
+  document.querySelectorAll("#filterpanel .chip").forEach(c => {
+    const kat = c.textContent.replace(/^[^\s]+\s/, "");
+    c.classList.toggle("aktiv", kat === k || (k === "" && c === alleKnapp));
+  });
+  render();
+}
+
+sokInput.addEventListener("input", render);
+
+function render() {
+  const sok = sokInput.value.trim().toLowerCase();
+  const treff = KLUBBER.filter(kl =>
+    (aktivKategori === "" || kl.k === aktivKategori) &&
+    (sok === "" || kl.n.toLowerCase().includes(sok) || kl.k.toLowerCase().includes(sok))
+  );
+  teller.textContent = treff.length + " av " + KLUBBER.length + " kulturtilbud";
+  if (treff.length === 0) {
+    grid.innerHTML = '<div class="ingen">Ingen treff. Prøv et annet søkeord eller velg «Alle».</div>';
+    return;
+  }
+  grid.innerHTML = treff.map(kl => {
+    const kat = KATEGORIER[kl.k];
+    const navn = kl.w ? '<a href="' + kl.w + '" target="_blank" rel="noopener">' + kl.n + '</a>' : kl.n;
+    const lenker = [];
+    if (kl.w) lenker.push('<a class="lenke" href="' + kl.w + '" target="_blank" rel="noopener">🌐 Nettsted</a>');
+    if (kl.e) lenker.push('<a class="lenke" href="mailto:' + kl.e + '">✉️ E-post</a>');
+    if (kl.f) lenker.push('<a class="lenke" href="' + kl.f + '" target="_blank" rel="noopener">📘 Facebook</a>');
+    return '<article class="kort">' +
+      '<div class="kort-bilde" style="background:' + kat.grad + '">' + kat.ikon + '</div>' +
+      '<div class="kort-kropp">' +
+      '<h2 class="kort-navn">' + navn + '</h2>' +
+      '<div class="chip-rad"><span class="mini-chip">' + kl.k + '</span></div>' +
+      (lenker.length ? '<div class="lenke-rad">' + lenker.join("") + '</div>' : '') +
+      '</div></article>';
+  }).join("");
+}
+
+render();
+</script>
+</body>
+</html>
