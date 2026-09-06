@@ -2,17 +2,17 @@
 
 Oversikt over kulturtilbud i Asker – skolekorps, kor, kulturskole, teater, dans, speider og mer.
 
-Statisk side (én `index.html` + 39 klubbsider, ingen build-step). Publiseres via GitHub Pages på domenet **askerkultur.no**. `sitemap.xml` (40 URL-er) + `robots.txt` ligger i roten for søkemotorer.
+Statisk side (én `index.html` + 40 klubbsider, ingen build-step). Publiseres via GitHub Pages på domenet **askerkultur.no**. `sitemap.xml` (40 URL-er) + `robots.txt` ligger i roten for søkemotorer.
 
 ## Funksjoner
 - Søk på navn/aktivitet
 - Filter per kategori (skolekorps, kor & musikk, kulturskole, scenekunst & dans, speider, frivillig, hobby)
 - Kort på forsida lenker til egen klubbside (`<slug>.html`)
 - Klubbsider med ikon, aktivitet, nettside, e-post/Facebook og adresse
-- **Kart** (`kart.html`): Leaflet/OpenStreetMap med markør for hver aktivitet, kategorifilter og dypelenker (`kart.html#slug`). Knapp i topbar + 📍-chip på hvert kort + "Vis i kart" på hver klubbside. Koordinater i `kartdata.js` (geokodet mot OSM Nominatim 2026-09-06). Klubber uten fysisk møteadresse (Bondi & Vettre og Borgen = bare postboks, Blakstad KFUK-KFUM = forbundskontorets adresse i kilden) vises i lista på kartsida uten markør.
+- **Kart** (`kart.html`): Leaflet/OpenStreetMap med markør for hver aktivitet, kategorifilter og dypelenker (`kart.html#slug`). Knapp i topbar + 📍-chip på hvert kort + "Vis i kart" på hver klubbside. Koordinater i `kartdata.js` (geokodet mot OSM Nominatim 2026-09-06). Klubber uten fysisk møteadresse (Bondi & Vettre og Borgen = bare postboks, Blakstad KFUK-KFUM = forbundskontorets adresse i kilden, EC Play = skoleband på ulike skoler) vises i lista på kartsida uten markør.
 
 ## Data
-Klubbdatabase bygger på e-post/lenke-rapporten fra askeridrett.no-oversikten (kulturklubbene, 38 stk), supplert manuelt.
+Klubbdatabase bygger på e-post/lenke-rapporten fra askeridrett.no-oversikten (kulturklubbene, 39 stk), supplert manuelt.
 De 39 klubbsidene kommer fra den gamle askeridrett.no-siden (slettet 2026-09-05, gjenfunnet fra inspect-kopi) med ny askerkultur-branding.
 
 ### Kilder for adresser (8 klubber som manglet adresse, 2026-09-06)

@@ -66,7 +66,7 @@ footer{border-top:1px solid #e3eaf2;background:#fff;padding:1.6rem 1rem;text-ali
 
 <div class="ingen-pos">
   <details>
-    <summary>📍 Aktiviteter uten fysisk adresse på kartet (3)</summary>
+    <summary>📍 Aktiviteter uten fysisk adresse på kartet (<span id="ipos-antall"></span>)</summary>
     <div id="ingen-pos-liste"></div>
   </details>
 </div>
@@ -127,6 +127,7 @@ panel.addEventListener('click', e => {
   tegn();
 });
 
+document.getElementById('ipos-antall').textContent = KART_INGEN_POS.length;
 document.getElementById('ingen-pos-liste').innerHTML = KART_INGEN_POS.map(k =>
   '<div class="rad"><span>' + k.n + '</span><span class="pop-kat">' + k.aar + '</span><a href="/' + k.s + '.html">Mer &rarr;</a></div>'
 ).join('');

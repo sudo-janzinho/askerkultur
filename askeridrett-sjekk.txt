@@ -1,0 +1,7 @@
+=== https://askeridrett.no/ HTTP 200
+  leaflet: true | setPrefix: false | lenge: true
+  title: <title>Fritidsaktiviteter i Asker - 157 tilbud</title>
+  map-init: L.map('map')
+=== https://askeridrett.no/kart.html HTTP 404
+  leaflet: false | setPrefix: false | lenge: false
+  title: <title>Page not found &middot; GitHub Pages</title>

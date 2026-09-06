@@ -44,5 +44,6 @@ const KLUBBER_KART = [
 const KART_INGEN_POS = [
   { s:"bondi-og-vettre-skolekorps", n:"Bondi & Vettre Skolekorps", aar:"Bare postadresse (Postboks 315, 1372 Asker)" },
   { s:"borgen-skolekorps", n:"Borgen Skolekorps", aar:"Bare postadresse (Postboks 387, 1372 Asker)" },
-  { s:"blakstad-kfuk-kfum-speidere", n:"Blakstad KFUK-KFUM Speidere", aar:"Adresse i kilden er forbundskontoret i Oslo - kontakt gruppen for møtested" }
+  { s:"blakstad-kfuk-kfum-speidere", n:"Blakstad KFUK-KFUM Speidere", aar:"Adresse i kilden er forbundskontoret i Oslo - kontakt gruppen for møtested" },
+  { s:"ec-play", n:"EC Play", aar:"Skoleband på ulike skoler i Asker - se nettsiden" }
 ];
