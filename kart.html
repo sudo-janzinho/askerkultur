@@ -83,6 +83,8 @@ const KAT_IKON = {
   "Speider":"🧭","Frivillig & annet":"🤝","Hobby & teknikk":"✈️"
 };
 const kart = L.map('kart').setView([59.79, 10.45], 10);
+// bytt standardprefix (ukrainsk flagga + Leaflet-lenke) til diskret tekstlenke uten flagg
+kart.attributionControl.setPrefix('<a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>');
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>-bidragsytere'
