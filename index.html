@@ -16,6 +16,8 @@ body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,sans-serif;backgrou
 a{color:var(--blaa2)}
 .topbar{background:#fff;border-bottom:1px solid #e3eaf2;position:sticky;top:0;z-index:10}
 .topbar-in{max-width:1200px;margin:0 auto;padding:.7rem 1rem;display:flex;align-items:center;justify-content:space-between}
+.kartknapp{background:var(--blaa);color:#fff;text-decoration:none;border-radius:999px;padding:.45rem 1.1rem;font-size:.9rem;font-weight:600;display:inline-flex;align-items:center;gap:.4rem}
+.kartknapp:hover{background:#254f88}
 .logo{font-weight:700;color:var(--blaa);text-decoration:none;font-size:1.05rem;display:flex;align-items:center;gap:.5rem}
 .logo .em{font-size:1.3rem}
 .hero{max-width:900px;margin:0 auto;padding:3.2rem 1rem 1.6rem;text-align:center}
@@ -56,6 +58,7 @@ footer{border-top:1px solid #e3eaf2;background:#fff;padding:1.6rem 1rem;text-ali
 
 <div class="topbar"><div class="topbar-in">
   <a class="logo" href="/"><span class="em">🎭</span> askerkultur.no</a>
+  <a class="kartknapp" href="/kart.html">🗺️ Se kart</a>
 </div></div>
 
 <section class="hero">
@@ -185,6 +188,7 @@ function render() {
     if (kl.w) lenker.push('<a class="lenke" href="' + kl.w + '" target="_blank" rel="noopener">🌐 Nettsted</a>');
     if (kl.e) lenker.push('<a class="lenke" href="mailto:' + kl.e + '">✉️ E-post</a>');
     if (kl.f) lenker.push('<a class="lenke" href="' + kl.f + '" target="_blank" rel="noopener">📘 Facebook</a>');
+    if (kl.s) lenker.push('<a class="lenke" href="/kart.html#' + kl.s + '">📍 Kart</a>');
     return '<article class="kort">' +
       '<div class="kort-bilde" style="background:' + kat.grad + '">' + kat.ikon + '</div>' +
       '<div class="kort-kropp">' +

@@ -9,6 +9,7 @@ Statisk side (én `index.html` + 39 klubbsider, ingen build-step). Publiseres vi
 - Filter per kategori (skolekorps, kor & musikk, kulturskole, scenekunst & dans, speider, frivillig, hobby)
 - Kort på forsida lenker til egen klubbside (`<slug>.html`)
 - Klubbsider med ikon, aktivitet, nettside, e-post/Facebook og adresse
+- **Kart** (`kart.html`): Leaflet/OpenStreetMap med markør for hver aktivitet, kategorifilter og dypelenker (`kart.html#slug`). Knapp i topbar + 📍-chip på hvert kort + "Vis i kart" på hver klubbside. Koordinater i `kartdata.js` (geokodet mot OSM Nominatim 2026-09-06). Klubber uten fysisk møteadresse (Bondi & Vettre og Borgen = bare postboks, Blakstad KFUK-KFUM = forbundskontorets adresse i kilden) vises i lista på kartsida uten markør.
 
 ## Data
 Klubbdatabase bygger på e-post/lenke-rapporten fra askeridrett.no-oversikten (kulturklubbene, 38 stk), supplert manuelt.
