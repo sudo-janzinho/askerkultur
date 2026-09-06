@@ -2,7 +2,7 @@
 
 Oversikt over kulturtilbud i Asker – skolekorps, kor, kulturskole, teater, dans, speider og mer.
 
-Statisk side (én `index.html`, ingen build-step). Publiseres via GitHub Pages på domenet **askerkultur.no**.
+Statisk side (én `index.html` + 39 klubbsider, ingen build-step). Publiseres via GitHub Pages på domenet **askerkultur.no**. `sitemap.xml` (40 URL-er) + `robots.txt` ligger i roten for søkemotorer.
 
 ## Funksjoner
 - Søk på navn/aktivitet

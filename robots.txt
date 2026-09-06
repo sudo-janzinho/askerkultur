@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://askerkultur.no/sitemap.xml
